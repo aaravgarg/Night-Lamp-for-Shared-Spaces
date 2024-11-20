@@ -3,11 +3,9 @@ void setup() {
   pinMode(3, OUTPUT);
   pinMode(5, OUTPUT);
   pinMode(9, OUTPUT);
-
-
+  
   // Start serial communication at a baud rate of 9600
   Serial.begin(9600);
-
 
   // Initially turn on all LEDs
   digitalWrite(3, HIGH);
@@ -15,11 +13,9 @@ void setup() {
   digitalWrite(9, HIGH);
 }
 
-
 void loop() {
   // Read the value from the light sensor connected to analog pin A0
   int sensorValue = analogRead(A0);
-
 
   // If the sensor value is greater than or equal to 500
   if (sensorValue >= 500) {
@@ -29,7 +25,6 @@ void loop() {
     analogWrite(3, 250); // LED brightness
   } 
 
-
   // If the sensor value is less than or equal to 500
   if (sensorValue <= 500) {
     // Turn on the LEDs
@@ -38,10 +33,8 @@ void loop() {
     digitalWrite(9, HIGH);
   }
 
-
   // Print the sensor value to the serial monitor for debugging
   Serial.println(sensorValue);
-
 
   // Short delay before repeating the loop
   delay(2);
